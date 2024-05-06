@@ -34,15 +34,68 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+```
+Step 1: Open Quartus II in your laptop.
+
+Step 2: Write code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+Step 3: Run compilation to check for errors.
+
+Step 4: Open waveform output and load input values.
+
+Step 5: Run simulation to get the output.
+
+Step 6: Open in RTL viewers to get RTL diagram output.
+```
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+Developed by:Iniyasri.s
+RegisterNumber:212223230081
+module JKFLIPFLOPUSINGIFELSE(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
+
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+    begin
+	     if(j==0 && k==0)
+		  begin 
+		  q<=q;
+		  qb<=qb;
+		  end
+	 else if (j!=k)
+	     begin
+	     q<=j;
+	     qb<=k;
+	     end	 
+	 else if(j==1 && k==1)
+	     begin
+	     q<=~q;
+	     qb<=~qb;
+	     end
+    end
+end
+endmodule
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/iniyasri4464/JKFLIPFLOP-USING-IF-ELSE/assets/152419072/bc8f71d1-9f9c-4809-9636-5e2e84f44014)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/iniyasri4464/JKFLIPFLOP-USING-IF-ELSE/assets/152419072/5f1b004f-cd30-4864-b271-22a74da97c92)
 
 **RESULTS**
+The observation of the simulation results and confirm the successful execution of the program
